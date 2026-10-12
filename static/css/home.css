@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f8f6ff;
+    --purple: #8870d4;
+    --purple-dark: #6d56b5;
+    --text: #29243b;
+    --muted: #89839c;
+    --white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background:
+        radial-gradient(circle at 10% 15%, #e8e0ff 0, transparent 30%),
+        radial-gradient(circle at 90% 85%, #f0e5ff 0, transparent 30%),
+        var(--bg);
+    color: var(--text);
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 8%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.nav-tagline {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Main section */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 45px 20px 70px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple-dark);
+    background: #eee8ff;
+    border: 1px solid #e4dbff;
+    padding: 10px 16px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    background: var(--purple);
+    border-radius: 50%;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: var(--purple);
+    font-style: italic;
+}
+
+.subtitle {
+    max-width: 440px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Quote card */
+
+.quote-card {
+    width: 100%;
+    max-width: 620px;
+    margin-top: 45px;
+    padding: 38px 40px 25px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #ebe5f8;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(87, 65, 142, 0.09);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 65px rgba(87, 65, 142, 0.14);
+}
+
+.quote-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    height: 55px;
+    color: #c5b4f5;
+    line-height: 1;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(23px, 3vw, 32px);
+    line-height: 1.6;
+    margin: 18px 0 25px;
+}
+
+.quote-divider {
+    height: 1px;
+    background: #eee9f7;
+    margin-bottom: 20px;
+}
+
+.quote-author {
+    color: var(--purple-dark);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #f1edf8;
+}
+
+.category {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.copy-btn {
+    background: #f3efff;
+    border: 1px solid #e5dcff;
+    color: var(--purple-dark);
+    padding: 9px 14px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #e8dfff;
+}
+
+/* Inspire button */
+
+.new-quote-btn {
+    margin-top: 28px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 14px;
+    background: var(--purple);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(136, 112, 212, 0.25);
+    transition: 0.25s ease;
+}
+
+.new-quote-btn span {
+    font-size: 18px;
+    margin-right: 7px;
+}
+
+.new-quote-btn:hover {
+    background: var(--purple-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(109, 86, 181, 0.3);
+}
+
+.footer-note {
+    margin-top: 35px;
+    font-size: 12px;
+    color: #a49bb9;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 22px 6%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-tagline {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 55px 18px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .quote-card {
+        padding: 28px 23px 22px;
+        margin-top: 32px;
+        border-radius: 20px;
+    }
+
+    .card-footer {
+        align-items: flex-start;
+    }
+
+    .category {
+        max-width: 150px;
+        line-height: 1.6;
+    }
+}

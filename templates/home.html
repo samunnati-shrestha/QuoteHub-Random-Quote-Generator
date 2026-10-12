@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteHub | Daily Inspiration</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">Quote<span>Hub.</span></a>
+        <p class="nav-tagline">A little inspiration, every day.</p>
+    </header>
+
+    <main class="hero">
+
+        <div class="eyebrow">
+            <span class="dot"></span>
+            YOUR DAILY DOSE OF INSPIRATION
+        </div>
+
+        <h1>Words that <span>move</span> you.</h1>
+
+        <p class="subtitle">
+            Sometimes, all you need is a few words to change your perspective.
+        </p>
+
+        <section class="quote-card">
+
+            <div class="quote-icon">&ldquo;</div>
+
+            <p class="quote-text"> {{quote.quote}}
+            </p>
+
+            <div class="quote-divider"></div>
+
+            <p class="quote-author">— {{quote.author}} </p>
+
+            <div class="card-footer">
+                <span class="category">✦ A thought to remember</span>
+
+                <button class="copy-btn" type="button" onclick="copyQuote()">
+                    Copy quote
+                </button>
+            </div>
+
+        </section>
+
+        <button class="new-quote-btn" type="button" onclick="location.reload()">
+            <span>↻</span> Inspire me
+        </button>
+
+        <p class="footer-note">
+            Take what you need. Leave what you don't. ♡
+        </p>
+
+    </main>
+
+    <script>
+        function copyQuote() {
+            const quote = document.querySelector(".quote-text").innerText;
+            const author = document.querySelector(".quote-author").innerText;
+
+            navigator.clipboard.writeText(`${quote} ${author}`)
+                .then(() => {
+                    const button = document.querySelector(".copy-btn");
+                    button.innerText = "Copied! ✓";
+
+                    setTimeout(() => {
+                        button.innerText = "Copy quote";
+                    }, 1500);
+                });
+        }
+    </script>
+
+</body>
+</html>
